@@ -5,12 +5,17 @@ import Calculations from '../Calculations/Calculations';
 
 const Gym = () => {
     const [workouts, setWorkouts] = useState([])
+    const [time, setTime] = useState([[]])
 
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
             .then(data => setWorkouts(data))
     }, [])
+
+    const handleToAddTime = (time) => {
+        console.log(time)
+    }
 
     return (
         <div className='activities-container'>
@@ -22,6 +27,7 @@ const Gym = () => {
                         workouts.map(workout => <Cards
                             workout={workout}
                             key={workout.id}
+                            handleToAddTime={handleToAddTime}
                         ></Cards>)
                     }
                 </div>

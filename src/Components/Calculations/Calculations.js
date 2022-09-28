@@ -40,11 +40,11 @@ const Calculations = () => {
                 <h3>Excersize Details</h3>
                 <div className='total-time'>
                     <h3>Excersize Time</h3>
-                    <h3>200 s</h3>
+                    <h3>0 s</h3>
                 </div>
                 <div className='total-time'>
                     <h3>Break Time</h3>
-                    <h3>20 s</h3>
+                    <h3>0 s</h3>
                 </div>
                 <div>
 
