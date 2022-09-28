@@ -1,0 +1,11 @@
+.activities-container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.activities-card-container{
+    border: 1px solid black;
+    margin: 60px;
+}
+.time-container{
+    border: 1px solid black;
+}

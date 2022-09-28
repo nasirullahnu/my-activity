@@ -1,9 +1,11 @@
 import './App.css';
+import Gym from './Components/Gym/Gym';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Connected to the private assignment git-hub</h1>
+    <div>
+      <Gym></Gym>
+      
     </div>
   );
 }
