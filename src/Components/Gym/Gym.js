@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Cards from '../Cards/Cards';
 import './Gym.css'
+import Calculations from '../Calculations/Calculations';
 
 const Gym = () => {
     const [workouts, setWorkouts] = useState([])
@@ -26,7 +27,7 @@ const Gym = () => {
                 </div>
             </div>
             <div className="time-container">
-                <h3>This is for time calculation</h3>
+                <Calculations></Calculations>
             </div>
         </div>
     );
