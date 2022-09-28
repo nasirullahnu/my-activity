@@ -9,3 +9,8 @@
 .time-container{
     border: 1px solid black;
 }
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
