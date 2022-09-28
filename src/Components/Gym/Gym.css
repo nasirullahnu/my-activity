@@ -3,7 +3,6 @@
     grid-template-columns: 4fr 1fr;
 }
 .activities-card-container{
-    border: 1px solid black;
     margin: 60px;
 }
 .time-container{
@@ -13,4 +12,16 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+}
+
+@media only screen and (min-width: 577px) and (max-width: 1000px){
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+@media only screen and(max-width: 650px){
+    .card-container{
+        grid-template-columns: 1fr;
+    }
 }
