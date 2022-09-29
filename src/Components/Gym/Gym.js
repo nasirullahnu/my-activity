@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Cards from '../Cards/Cards';
 import './Gym.css'
 import Calculations from '../Calculations/Calculations';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDumbbell } from '@fortawesome/free-solid-svg-icons'
 
 const Gym = () => {
     const [workouts, setWorkouts] = useState([])
-    
+
 
     useEffect(() => {
         fetch('data.json')
@@ -25,7 +27,10 @@ const Gym = () => {
     return (
         <div className='activities-container'>
             <div className="activities-card-container">
-                <h1>my-activity</h1>
+                <div className='heading'>
+                    <FontAwesomeIcon icon={faDumbbell}></FontAwesomeIcon>
+                    <h1>my-activity</h1>
+                </div>
                 <h2>Workouts for Toay</h2>
                 <div className='card-container'>
                     {

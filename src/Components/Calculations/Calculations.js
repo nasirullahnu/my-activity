@@ -61,7 +61,6 @@ const Calculations = (props) => {
                     <button onClick={()=>breakTime(20)}>20</button>
                     <button onClick={()=>breakTime(30)}>30</button>
                     <button onClick={()=>breakTime(40)}>40</button>
-                    <button onClick={()=>breakTime(50)}>50</button>
                 </div>
             </div>
             <div className='excersize-details'>
