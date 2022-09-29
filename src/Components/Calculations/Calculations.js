@@ -3,17 +3,17 @@ import logo from '../image/profile.jpg'
 import './Calculations.css'
 
 const Calculations = (props) => {
-
+    // console.log(props)
     const {times} = props;
-    var excersizeTime = 0;
-    // console.log(excersizeTime);
-    for (const catagory of times){
-        const finalTime = catagory.time;
-        // console.log(finalTime);
-        const allTime = 5 + finalTime;
-        // const allTime = excersizeTime + ;
-        // console.log(allTime)
-        excersizeTime = allTime;
+   
+    // excersize total time added to the side list 
+    let workOutTime = 0;
+    for (const timee of times){
+        // console.log(timee)
+        const finalTime = 0 + timee.time;
+        // console.log(timee.time)
+        // console.log(typeof finalTime);
+        workOutTime = finalTime
     }
 
     const [timeBreak, setTimeBreak] = useState(0)
@@ -26,12 +26,10 @@ const Calculations = (props) => {
         // break time added to local storage 
         const quantity = localStorage.getItem(times)
         if(quantity){
-            console.log('already exist')
             const newQuantity = parseInt(quantity) + 1
             localStorage.setItem(times, newQuantity);
         }
         else{
-            console.log('new item')
             localStorage.setItem(times,1)
         }
     }
@@ -72,7 +70,7 @@ const Calculations = (props) => {
                 <h3>Excersize Details</h3>
                 <div className='total-time'>
                     <h3>Excersize Time</h3>
-                    <h3><span id="total-time">{excersizeTime}</span>s</h3>
+                    <h3> {workOutTime} s</h3>
                 </div>
                 <div className='total-time'>
                     <h3>Break Time</h3>
