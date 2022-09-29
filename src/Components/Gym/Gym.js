@@ -6,15 +6,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDumbbell } from '@fortawesome/free-solid-svg-icons'
 
 const Gym = () => {
+    // get data from json 
     const [workouts, setWorkouts] = useState([])
-
-
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
             .then(data => setWorkouts(data))
     }, [])
 
+    // add time added to excersize time 
     const [time, setTime] = useState([[]])
 
     const handleToAddTime = (times) => {

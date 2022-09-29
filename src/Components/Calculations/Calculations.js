@@ -4,13 +4,37 @@ import './Calculations.css'
 
 const Calculations = (props) => {
 
+    const {times} = props;
+    var excersizeTime = 0;
+    // console.log(excersizeTime);
+    for (const catagory of times){
+        const finalTime = catagory.time;
+        // console.log(finalTime);
+        const allTime = 5 + finalTime;
+        // const allTime = excersizeTime + ;
+        // console.log(allTime)
+        excersizeTime = allTime;
+    }
+
     const [timeBreak, setTimeBreak] = useState(0)
 
+    // break time added to dom 
     const breakTime = (times) => {
         // console.log(times)
         setTimeBreak(times)
+
+        // break time added to local storage 
+        const quantity = localStorage.getItem(times)
+        if(quantity){
+            console.log('already exist')
+            const newQuantity = parseInt(quantity) + 1
+            localStorage.setItem(times, newQuantity);
+        }
+        else{
+            console.log('new item')
+            localStorage.setItem(times,1)
+        }
     }
-    
 
     return (
         <div>
@@ -48,14 +72,13 @@ const Calculations = (props) => {
                 <h3>Excersize Details</h3>
                 <div className='total-time'>
                     <h3>Excersize Time</h3>
-                    <h3><span id="total-time">0</span>s</h3>
+                    <h3><span id="total-time">{excersizeTime}</span>s</h3>
                 </div>
                 <div className='total-time'>
                     <h3>Break Time</h3>
                     <h3>{timeBreak} s</h3>
                 </div>
                 <div>
-
                 </div>
             </div>
             <button className='completed'>Activity Completed</button>

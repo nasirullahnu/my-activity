@@ -1,9 +1,12 @@
 import React from 'react';
 import './Cards.css'
 
+
+// excersize cards 
 const Cards = (props) => {
     const {handleToAddTime, workout} = props
-    const { name, time, img, id, details, age } = props.workout;
+    console.log(props);
+    const { name, time, img, details, age } = props.workout;
     return (
         <div className='card'>
             <img src={img} alt="" />
