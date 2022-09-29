@@ -3,31 +3,12 @@ import logo from '../image/profile.jpg'
 import './Calculations.css'
 
 const Calculations = (props) => {
-    const {times} = props;
-    let workTime = 0;
-    for(const time of times){
-        // console.log(time.time);
-        const totalTime = workTime + time.time;
-        // console.log(totalTime)
-        workTime = parseFloat(totalTime);
-        // console.log(workTime)
-    }
 
     const [timeBreak, setTimeBreak] = useState(0)
 
     const breakTime = (times) => {
-        console.log(times)
-        const breakPlace = document.getElementById('break-place')
-        const breakValue = parseInt(breakPlace.innerText)
-        const totalBreak = breakValue + times;
-        console.log(totalBreak);
-        breakPlace.innerText = totalBreak;
-
-        // setTimeBreak(totalBreak);
-        
-        // breakPlace.innerText = '';
-        // breakPlace.innerText = totalBreak;
-        // console.log(totalBreak);
+        // console.log(times)
+        setTimeBreak(times)
     }
     
 
@@ -67,11 +48,11 @@ const Calculations = (props) => {
                 <h3>Excersize Details</h3>
                 <div className='total-time'>
                     <h3>Excersize Time</h3>
-                    <h3>{workTime}s</h3>
+                    <h3><span id="total-time">0</span>s</h3>
                 </div>
                 <div className='total-time'>
                     <h3>Break Time</h3>
-                    <h3 id='break-place'> 0</h3>
+                    <h3>{timeBreak} s</h3>
                 </div>
                 <div>
 
@@ -81,5 +62,4 @@ const Calculations = (props) => {
         </div>
     );
 };
-
 export default Calculations;
