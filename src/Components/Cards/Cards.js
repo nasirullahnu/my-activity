@@ -2,6 +2,7 @@ import React from 'react';
 import './Cards.css'
 
 const Cards = (props) => {
+    const {handleToAddTime, workout} = props
     const { name, time, img, id, details, age } = props.workout;
     return (
         <div className='card'>
@@ -12,7 +13,7 @@ const Cards = (props) => {
                 <p>For Age: <strong>{age}</strong> yrs</p>
                 <p>Time : <strong>{time}</strong>s</p>
             </div>
-            <button onClick={() => props.handleToAddTime(time)} className='btn-cart'>Add to cart</button>
+            <button onClick={() => handleToAddTime(workout)} className='btn-cart'>Add time</button>
         </div>
     );
 };

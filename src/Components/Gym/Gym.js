@@ -5,7 +5,7 @@ import Calculations from '../Calculations/Calculations';
 
 const Gym = () => {
     const [workouts, setWorkouts] = useState([])
-    const [time, setTime] = useState([[]])
+    
 
     useEffect(() => {
         fetch('data.json')
@@ -13,8 +13,13 @@ const Gym = () => {
             .then(data => setWorkouts(data))
     }, [])
 
-    const handleToAddTime = (time) => {
-        console.log(time)
+    const [time, setTime] = useState([[]])
+
+    const handleToAddTime = (times) => {
+        // console.log(times)
+        const newTime = [...time, times]
+        setTime(newTime);
+        // console.log(time)
     }
 
     return (
@@ -33,7 +38,7 @@ const Gym = () => {
                 </div>
             </div>
             <div className="time-container">
-                <Calculations></Calculations>
+                <Calculations times={time}></Calculations>
             </div>
         </div>
     );

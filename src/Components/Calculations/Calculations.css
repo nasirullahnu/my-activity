@@ -23,14 +23,14 @@
     border-radius: 10px;
     background-color: bisque;
 }
-.times a {
+.times button {
     text-decoration: none;
     padding: 5px;
     background-color: aqua;
     margin: 10px;
     border-radius: 50% ;
 }
-.times a:hover{
+.times button:hover{
     background-color: rgb(6, 175, 175);
     color: white;
 }

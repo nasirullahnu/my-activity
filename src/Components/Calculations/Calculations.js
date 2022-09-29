@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../image/profile.jpg'
 import './Calculations.css'
 
-const Calculations = () => {
+const Calculations = (props) => {
+    const {times} = props;
+    let workTime = 0;
+    for(const time of times){
+        // console.log(time.time);
+        const totalTime = workTime + time.time;
+        // console.log(totalTime)
+        workTime = parseFloat(totalTime);
+        // console.log(workTime)
+    }
+
+    const [timeBreak, setTimeBreak] = useState(0)
+
+    const breakTime = (times) => {
+        console.log(times)
+        const breakPlace = document.getElementById('break-place')
+        const breakValue = parseInt(breakPlace.innerText)
+        const totalBreak = breakValue + times;
+        console.log(totalBreak);
+        breakPlace.innerText = totalBreak;
+
+        // setTimeBreak(totalBreak);
+        
+        // breakPlace.innerText = '';
+        // breakPlace.innerText = totalBreak;
+        // console.log(totalBreak);
+    }
+    
+
     return (
         <div>
             <div className='profile'>
@@ -28,23 +56,23 @@ const Calculations = () => {
             </div>
             <div className="break">
                 <h3>Add a Break</h3>
-                <dvi className="times">
-                    <a href="">10s</a>
-                    <a href="">20s</a>
-                    <a href="">30s</a>
-                    <a href="">40s</a>
-                    <a href="">50s</a>
-                </dvi>
+                <div className="times">
+                    <button onClick={()=>breakTime(10)}>10</button>
+                    <button onClick={()=>breakTime(20)}>20</button>
+                    <button onClick={()=>breakTime(30)}>30</button>
+                    <button onClick={()=>breakTime(40)}>40</button>
+                    <button onClick={()=>breakTime(50)}>50</button>
+                </div>
             </div>
             <div className='excersize-details'>
                 <h3>Excersize Details</h3>
                 <div className='total-time'>
                     <h3>Excersize Time</h3>
-                    <h3>0 s</h3>
+                    <h3>{workTime}s</h3>
                 </div>
                 <div className='total-time'>
                     <h3>Break Time</h3>
-                    <h3>0 s</h3>
+                    <h3 id='break-place'> 0</h3>
                 </div>
                 <div>
 
